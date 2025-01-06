@@ -65,6 +65,7 @@ spec:
         1. Do you see the topology view with the application you just specified (initialy it will be building)?
         2. Click on the pod, a fly-out should appear. If it is still building you will see Builds running. Is the Build complete?
         3. Do you see a green tick next to the Pod in the Topology view?
+        4. Can you access the route?
     summary:
       failed: Try the steps again.
       success: Your application is running and working, you saw how to build from source code. There is more to explore here, container logs, terminal access, build logs, observability.
