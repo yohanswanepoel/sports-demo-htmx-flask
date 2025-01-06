@@ -1,0 +1,1 @@
+# Simple demo of HTMX Flask in a sports context
