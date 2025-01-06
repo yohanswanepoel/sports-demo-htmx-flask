@@ -1,1 +1,1 @@
-# Simple demo of HTMX Flask in a sports context
+# Simple demo of HTMX Flask in a sports context```bashflask run -h 0.0.0.0 -p 5500 --debug```## Environment variables for Postgresql* DB_URL = os.getenv("DATABASE_URL")* DB_USER = os.getenv("DB_USER","username")* DB_PASSWORD = os.getenv("DB_PASSWORD","password")
