@@ -15,10 +15,10 @@ app = Flask(__name__)
 if not os.getenv("DBURL"):
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
 else:
-    DB_URL = os.getenv("DBURL")
+    DB_URL = os.getenv("DBURL","postgresql")
     DB_USER = os.getenv("DBUSER","username")
-    DB_PASSWORD = os.getenv("DBPASSWORD","password")
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_URL}/athlete_tracker'
+    DB_PASSWORD = os.getenv("DBPASSWORD","passsw0rd")
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_URL}/athletetracker'
 
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

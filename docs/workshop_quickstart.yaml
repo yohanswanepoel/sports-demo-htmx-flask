@@ -34,7 +34,7 @@ spec:
       2. Notice the catalogue items, under **Developer Catalog** click **Database**\n
       3. Select the **PostgreSQL (Ephemeral)** database\n
       4. Click on **Instantiate Template**.\n
-      5. You can let the template generate secrets but for our example we will set them 'PostgreSQL Connection Username': 'dbuser', 'PostgreSQL Connection Password': 'db_passsw0rd', 'PostgreSQL Database Name': 'athlete_tracker'
+      5. You can let the template generate secrets but for our example we will set them 'PostgreSQL Connection Username': 'dbuser', 'PostgreSQL Connection Password': 'dbpasssw0rd', 'PostgreSQL Database Name': 'athletetracker'
       "
     review:
       failedTaskHelp: This task isn’t verified yet. Try the task again.
@@ -54,7 +54,7 @@ spec:
       6. Expand **Show advanced Deployment option** field, we will add our connection details here.\n
       7. Create environment variable 'DBURL': 'postgresql', this is the service name of the PostgreSQL Pod\n
       8. Create environment variable 'DBUSER': 'dbuser'\n
-      9. Create environment variable 'DBPASSWORD': 'db_passsw0rd'\n
+      9. Create environment variable 'DBPASSWORD': 'dbpasssw0rd'\n
       10. Under **Show Advanced Routing Options** notice that the external route will be automatically secured.\n
       11. Click Create
       "
