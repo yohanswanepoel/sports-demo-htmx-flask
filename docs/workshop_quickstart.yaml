@@ -48,13 +48,13 @@ spec:
   - description: "We will deploy a container straight from source code, this capability is very handy for quick and easy experimentation and can be combined with more robust capabilities such as CI/CD and GitOps \n
       1. Click **+Add** in the menu bar on the left\n
       2. Notice the catalogue items, under **Git Repository** click **Import from Git**\n
-      3. Add the https://github.com/yohanswanepoel/sports_demo_htmx_flask.git git repo to 'Git Repo URL' field\n
+      3. Add the https://github.com/yohanswanepoel/sports-demo-htmx-flask.git git repo to 'Git Repo URL' field\n
       4. Do not change the **Import Strategy** but notice that we can edit the import strategy to use Devfiles and Container files as well, and it supports other languages.\n
       5. Notice the fields application name and component names, you can leave these as-is\n\n
       6. Expand **Show advanced Deployment option** field, we will add our connection details here.\n
-      7. Create environment variable DATABASE_URL: 'postgresql', this is the service name of the PostgreSQL Pod\n
-      8. Create environment variable 'DB_USER': 'dbuser'\n
-      9. Create environment variable 'DB_PASSWORD': 'db_passsw0rd'\n
+      7. Create environment variable 'DBURL': 'postgresql', this is the service name of the PostgreSQL Pod\n
+      8. Create environment variable 'DBUSER': 'dbuser'\n
+      9. Create environment variable 'DBPASSWORD': 'db_passsw0rd'\n
       10. Under **Show Advanced Routing Options** notice that the external route will be automatically secured.\n
       11. Click Create
       "

@@ -5,19 +5,19 @@ from datetime import datetime
 import os
 from icecream import ic
 import random
-import utils 
+import utils
 import json
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
 
-if not os.getenv("DATABASE_URL"):
+if not os.getenv("DBURL"):
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
 else:
-    DB_URL = os.getenv("DATABASE_URL")
-    DB_USER = os.getenv("DB_USER","username")
-    DB_PASSWORD = os.getenv("DB_PASSWORD","password")
+    DB_URL = os.getenv("DBURL")
+    DB_USER = os.getenv("DBUSER","username")
+    DB_PASSWORD = os.getenv("DBPASSWORD","password")
     app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_URL}/athlete_tracker'
 
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -38,7 +38,7 @@ class Performance(db.Model):
     event_type = db.Column(db.String(50), nullable=False)
     result = db.Column(db.Float, nullable=False)
     notes = db.Column(db.Text)
-    
+
 
 @app.route('/')
 def index():
@@ -63,7 +63,7 @@ def athlete_performance(id):
 def athlete_charts(id):
     performances = db.session.query(Performance).filter(Performance.athlete_id == id).order_by(Performance.date.desc())
     labels, times = utils.generate_chart_data(performances)
-    
+
     return render_template('hx_charts.html', labels=json.dumps(labels), times=json.dumps(times))
 
 @app.route('/add_performance', methods=['POST'])
@@ -78,14 +78,14 @@ def add_performance():
     )
     db.session.add(new_performance)
     db.session.commit()
-    
+
     athlete = Athlete.query.get_or_404(athlete_id)
     return render_template('hx_athlete_profile.html', athlete=athlete)
 
 
 utils.init_db(app, db, Athlete, Performance)
-        
-        
-        
+
+
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port="8080")
